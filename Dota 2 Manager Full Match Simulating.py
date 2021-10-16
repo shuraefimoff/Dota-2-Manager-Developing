@@ -6,40 +6,10 @@ from directory_for_dotamanager import *
 from typing import Dict, Union, Any, List
 
 
-def player_skill_team_playing(name_of_player):
-    skill_of_team_playing_player = team_playing[name_of_player]
-    return name_of_player + ' skill = ' + str(skill_of_team_playing_player)
-
-
-print(player_skill_team_playing('backpack of pain'))
-
-
-def player_solo_skill(name_of_player):
-    player_solo_skill_ = solo_skill[name_of_player]
-    return name_of_player + ' skill = ' + str(player_solo_skill_)
-
-
-print(player_solo_skill('backpack of pain'))
-
-
-def player_skill_on_his_pose(name_of_player):
-    player_skill_pose = skill_on_his_pose[name_of_player]
-    return name_of_player + ' skill = ' + str(player_skill_pose)
-
-
-print(player_skill_on_his_pose('backpack of pain'))
-
-
-def player_logic(name_of_player):
-    player_logic_skill = logic[name_of_player]
-    return name_of_player + ' skill = ' + str(player_logic_skill)
-
-
-print(player_logic('backpack of pain'))
-
-
-
 def match_simulating(team_1_name, team_2_name, match_bo):
+    if team_1_name not in teams_names or team_2_name not in teams_names:
+        print('There is no this team in our directory')
+        exit()
     team_1 = teams_players[team_1_name]
     team_2 = teams_players[team_2_name]
     team_1_skill = 0
@@ -68,6 +38,10 @@ def match_simulating(team_1_name, team_2_name, match_bo):
     game_point_team_1 = 0
     game_point_team_2 = 0
     match_winner = ''
+    bo_ = [1, 2, 3, 5]
+    if match_bo not in bo_:
+        print('Only bo1, bo2, bo3, bo5')
+        exit()
 
     def best_player_match():
         poses = [1, 2, 3, 4, 5]
@@ -271,9 +245,9 @@ def match_simulating(team_1_name, team_2_name, match_bo):
     return 'Congratulations' + ' ' + match_winner
 
 
-team1 = input()
-team2 = input()
-bo_maps = int(input())
+team1 = input('First Team: ')
+team2 = input('Second Team: ')
+bo_maps = int(input('BO(1,2,3,5): '))
 
 print(match_simulating(team1, team2, bo_maps))
 print('///////////////////////////////////////////////')
