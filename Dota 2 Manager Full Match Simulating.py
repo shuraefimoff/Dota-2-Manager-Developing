@@ -162,8 +162,6 @@ teams_names = ['-', 'LuckyTeam', 'Napalm', 'Bibisi', 'Team Sincere(China)', 'dep
                'ferzee', 'SeaTide', 'DX', 'ghoul', 'CrowCrowd', 'Digital Company', 'SeaOne',
                'Quantic.Lucky', '1%', 'Quantic.Young', 'KirieshkaTeam', 'Sixty', 'Velum',
                'Tidehunterdamage', 'OverKek']
-teams_top_ranks = [0, 1745, 1393, 1578, 1190, 735, 1850, 1445, 1095, 1680, 1355, 2204, 1559, 1879, 1834, 1241,
-                   1638, 929, 1867, 1228, 1230, 1517, 1132, 1145, 1540, 2064, 1435, 1588, 1735]
 
 teams_players: dict[Union[str, Any], Union[list[str], Any]] = {'LuckyTeam': LuckyTeam, 'Napalm': Napalm,
                                                                'Bibisi': Bibisi, 'Team Sincere(China)': TeamSincere,
