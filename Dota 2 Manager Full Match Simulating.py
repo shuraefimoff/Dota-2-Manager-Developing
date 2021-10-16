@@ -6,15 +6,6 @@ from directory_for_dotamanager import *
 from typing import Dict, Union, Any, List
 
 
-def player_skill(name_of_player):
-    skill_of_player = logic[name_of_player] + skill_on_his_pose[name_of_player] + solo_skill[name_of_player] + \
-                      team_playing[name_of_player]
-    return name_of_player + ' skill = ' + str(skill_of_player)
-
-
-print(player_skill('backpack of pain'))
-
-
 def player_skill_team_playing(name_of_player):
     skill_of_team_playing_player = team_playing[name_of_player]
     return name_of_player + ' skill = ' + str(skill_of_team_playing_player)
@@ -46,17 +37,6 @@ def player_logic(name_of_player):
 
 print(player_logic('backpack of pain'))
 
-
-def player_team(name_of_player):
-    for i in teams_players:
-        if name_of_player in teams_players[i]:
-            team_squad = teams_players[i]
-            for k, v in teams_players.items():
-                if v == team_squad:
-                    return name_of_player + ' is playing in ' + k
-
-
-print(player_team('backpack of pain'))
 
 
 def match_simulating(team_1_name, team_2_name, match_bo):

@@ -9,5 +9,5 @@ def check_the_players_of_team(name_of_team):
     return 'Team: ' + name_of_team
 
 
-team_name = input()
+team_name = input('Write a team, which players you want to know: ')
 print(check_the_players_of_team(team_name))
