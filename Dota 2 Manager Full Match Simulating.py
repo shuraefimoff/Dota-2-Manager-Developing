@@ -40,6 +40,7 @@ team_playing = {'sleepylyana': 18, 'm00dy': 84, 'cupervladik': 95, 'pudGG': 94, 
                 '野比大熊猫': 19, '咩撒嘎': 64, '爱赢不赢': 78, '迪士尼在逃丑大鸭': 4, '天气好热': 98,
                 '17': 34, 'backpack of pain': 73, 'boogi': 98, 'iamfear': 58, 'vxrvdx': 24,
                 'top1mider': 51, 'тыконечнонефильм': 89, 'speaker': 60, 'white322': 10, 'мастершифу': 82,
+                'lovemydaughter': 96, 'neymexa': 90, 'DDDDDD': 1, 'CR7': 24, 'Yeljke': 54,
                 'taketheelevator': 45, 'July': 55, 'orphan of kos': 3, 'руинер и весельчак': 73,
                 'shkolnikterrorist': 55,
                 'warcry': 68, 'андрейэтоя': 69, 'Path': 48, 'dc': 25, 'NIRVANA': 78,
@@ -68,6 +69,7 @@ solo_skill = {'sleepylyana': 6, 'm00dy': 99, 'cupervladik': 56, 'pudGG': 58, 'va
               '野比大熊猫': 54, '咩撒嘎': 80, '爱赢不赢': 63, '迪士尼在逃丑大鸭': 54, '天气好热': 80,
               '17': 77, 'backpack of pain': 91, 'boogi': 84, 'iamfear': 99, 'vxrvdx': 19,
               'top1mider': 89, 'тыконечнонефильм': 7, 'speaker': 61, 'white322': 9, 'мастершифу': 96,
+              'lovemydaughter': 94, 'neymexa': 2, 'DDDDDD': 79, 'CR7': 23, 'Yeljke': 88,
               'taketheelevator': 61, 'July': 42, 'orphan of kos': 32, 'руинер и весельчак': 63, 'shkolnikterrorist': 57,
               'warcry': 12, 'андрейэтоя': 37, 'Path': 41, 'dc': 31, 'NIRVANA': 71,
               'Pushistik': 45, '2': 84, 'El Capone': 95, 'sad sad sad': 67, 'играю до 1 луза': 11,
@@ -95,6 +97,7 @@ skill_on_his_pose = {'sleepylyana': 93, 'm00dy': 77, 'cupervladik': 93, 'pudGG':
                      '野比大熊猫': 77, '咩撒嘎': 81, '爱赢不赢': 58, '迪士尼在逃丑大鸭': 70, '天气好热': 67,
                      '17': 73, 'backpack of pain': 71, 'boogi': 76, 'iamfear': 66, 'vxrvdx': 83,
                      'top1mider': 65, 'тыконечнонефильм': 76, 'speaker': 100, 'white322': 71, 'мастершифу': 95,
+                     'lovemydaughter': 85, 'neymexa': 35, 'DDDDDD': 50, 'CR7': 11, 'Yeljke': 53,
                      'taketheelevator': 62, 'July': 94, 'orphan of kos': 91, 'руинер и весельчак': 73,
                      'shkolnikterrorist': 83,
                      'warcry': 61, 'андрейэтоя': 92, 'Path': 79, 'dc': 93, 'NIRVANA': 84,
@@ -123,6 +126,7 @@ logic = {'sleepylyana': 28, 'm00dy': 68, 'cupervladik': 22, 'pudGG': 44, 'vanger
          '野比大熊猫': 42, '咩撒嘎': 10, '爱赢不赢': 41, '迪士尼在逃丑大鸭': 25, '天气好热': 80,
          '17': 23, 'backpack of pain': 13, 'boogi': 40, 'iamfear': 56, 'vxrvdx': 80,
          'top1mider': 100, 'тыконечнонефильм': 16, 'speaker': 56, 'white322': 62, 'мастершифу': 74,
+         'lovemydaughter': 62, 'neymexa': 99, 'DDDDDD': 90, 'CR7': 1, 'Yeljke': 35,
          'taketheelevator': 74, 'July': 30, 'orphan of kos': 19, 'руинер и весельчак': 3, 'shkolnikterrorist': 80,
          'warcry': 40, 'андрейэтоя': 60, 'Path': 42, 'dc': 60, 'NIRVANA': 61,
          'Pushistik': 38, '2': 22, 'El Capone': 97, 'sad sad sad': 84, 'играю до 1 луза': 71,
@@ -170,7 +174,7 @@ teams_players: dict[Union[str, Any], Union[list[str], Any]] = {'LuckyTeam': Luck
                                                                '0k_Gaming': zerokgaming,
                                                                'ferzee': ferzee, 'SeaTide': SeaTide, 'DX': DX,
                                                                'ghoul': ghoul, 'CrowCrowd': CrowCrowd,
-                                                               'Digital Company': Digital_Company, 'SeaOne': SeaOne,
+                                                               'Digital_Company': Digital_Company, 'SeaOne': SeaOne,
                                                                'Quantic.Lucky': Quantic_Lucky,
                                                                '1%': onepercent, 'Quantic.Young': Quantic_Young,
                                                                'KirieshkaTeam': KirieshkaTeam,
@@ -265,8 +269,8 @@ def match_simulating(team_1_name, team_2_name, match_bo):
         rate_team_2 = 2.20
     print('Rate', team_1_name, ':', round(rate_team_1, 2))
     print('Rate', team_2_name, ':', round(rate_team_2, 2))
-    chance_for_team_1 = round(rate_team_2, 2) * 100
-    chance_for_team_2 = round(rate_team_1, 2) * 100
+    chance_for_team_1 = int(round(rate_team_2, 2) * 100)
+    chance_for_team_2 = int(round(rate_team_1, 2) * 100)
     print()
     game_point_team_1 = 0
     game_point_team_2 = 0
@@ -291,8 +295,7 @@ def match_simulating(team_1_name, team_2_name, match_bo):
                 teams_players[team_1_name][poses[4]]] + solo_skill[teams_players[team_1_name][poses[4]]] + \
                     team_playing[teams_players[team_1_name][poses[4]]]
             poses_skill = [pos_1, pos_2, pos_3, pos_4, pos_5]
-            player_pos = random.choice(poses_skill, weights = [pos_1 / team_1_skill, pos_2 / team_1_skill, pos_3 / team_1_skill,
-                                                pos_4 / team_1_skill, pos_5 / team_1_skill], k=1)
+            player_pos = random.choice(poses)
             print('The best player of the match: ', teams_players[team_1_name][player_pos])
         elif not flag_winner_team_1:
             player_pos = random.randint(1, 5)
@@ -410,6 +413,20 @@ def match_simulating(team_1_name, team_2_name, match_bo):
                     flag = False
                 print('//////////////////////////////////////////////////////////')
             best_player_match()
+            print(team_1_name, '', game_point_team_1, ':', game_point_team_2, '', team_2_name)
+            print()
+            if game_point_team_1 == 2 or game_point_team_2 == 2:
+                break
+        print(team_1_name, '', game_point_team_1, ':', game_point_team_2, '', team_2_name)
+        if game_point_team_1 > game_point_team_2:
+            match_winner = team_1_name
+            print(match_winner, ' Win')
+        elif game_point_team_2 > game_point_team_1:
+            match_winner = team_2_name
+            print(match_winner, ' Win')
+        elif game_point_team_1 == game_point_team_2:
+            print('Draw')
+        return 'Congratulations' + ' ' + match_winner
 
     if match_bo == 5:
         for bo5 in range(5):
@@ -454,10 +471,18 @@ def match_simulating(team_1_name, team_2_name, match_bo):
         print(match_winner, ' Win')
     elif game_point_team_2 > game_point_team_1:
         match_winner = team_2_name
+
         print(match_winner, ' Win')
     elif game_point_team_1 == game_point_team_2:
         print('Draw')
     return 'Congratulations' + ' ' + match_winner
 
 
-print(match_simulating('Velum', 'Sixty', 1))
+print(match_simulating('ghoul', 'Anime Squad', 5))
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
