@@ -5,16 +5,6 @@ from directory_for_dotamanager import *
 # Команды и их игроки
 from typing import Dict, Union, Any, List
 
-def check_the_players_of_team(name_of_team):
-    for i in range(1, 6):
-        print('pos', i, '-', teams_players[name_of_team][i], 'skill =',
-              team_playing[teams_players[name_of_team][i]] + logic[teams_players[name_of_team][i]] + solo_skill[
-                  teams_players[name_of_team][i]] + skill_on_his_pose[teams_players[name_of_team][i]])
-    return 'Team: ' + name_of_team
-
-
-print(check_the_players_of_team('depressedteam'))
-
 
 def player_skill(name_of_player):
     skill_of_player = logic[name_of_player] + skill_on_his_pose[name_of_player] + solo_skill[name_of_player] + \
