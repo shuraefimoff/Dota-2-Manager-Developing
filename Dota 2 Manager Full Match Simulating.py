@@ -478,7 +478,11 @@ def match_simulating(team_1_name, team_2_name, match_bo):
     return 'Congratulations' + ' ' + match_winner
 
 
-print(match_simulating('ghoul', 'Anime Squad', 5))
+team1 = input()
+team2 = input()
+bo_maps = int(input())
+
+print(match_simulating(team1, team2, bo_maps))
 print('///////////////////////////////////////////////')
 print('///////////////////////////////////////////////')
 print('///////////////////////////////////////////////')
