@@ -1,9 +1,14 @@
 # Dota 2 Manager/Base of Teams/
 import random
+<<<<<<< HEAD
+=======
+from directory_for_dotamanager import *
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
 
 # Команды и их игроки
 from typing import Dict, Union, Any, List
 
+<<<<<<< HEAD
 LuckyTeam = ['-', 'sleepylyana', 'm00dy', 'cupervladik', 'pudGG', 'vangeron']
 Napalm = ['-', 'kuokuo', 'YC', 'Cveen', 'RaGen', 'MTD']
 Bibisi = ['-', 'yabuki', 'light', 'muslimshady', 'bibis', 'пажылойлизгин']
@@ -243,6 +248,13 @@ print(player_team('backpack of pain'))
 
 
 def match_simulating(team_1_name, team_2_name, match_bo):
+=======
+
+def match_simulating(team_1_name, team_2_name, match_bo):
+    if team_1_name not in teams_names or team_2_name not in teams_names:
+        print('There is no this team in our directory')
+        exit()
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
     team_1 = teams_players[team_1_name]
     team_2 = teams_players[team_2_name]
     team_1_skill = 0
@@ -265,12 +277,24 @@ def match_simulating(team_1_name, team_2_name, match_bo):
         rate_team_2 = 2.20
     print('Rate', team_1_name, ':', round(rate_team_1, 2))
     print('Rate', team_2_name, ':', round(rate_team_2, 2))
+<<<<<<< HEAD
     chance_for_team_1 = round(rate_team_2, 2) * 100
     chance_for_team_2 = round(rate_team_1, 2) * 100
+=======
+    chance_for_team_1 = int(round(rate_team_2, 2) * 100)
+    chance_for_team_2 = int(round(rate_team_1, 2) * 100)
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
     print()
     game_point_team_1 = 0
     game_point_team_2 = 0
     match_winner = ''
+<<<<<<< HEAD
+=======
+    bo_ = [1, 2, 3, 5]
+    if match_bo not in bo_:
+        print('Only bo1, bo2, bo3, bo5')
+        exit()
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
 
     def best_player_match():
         poses = [1, 2, 3, 4, 5]
@@ -291,8 +315,12 @@ def match_simulating(team_1_name, team_2_name, match_bo):
                 teams_players[team_1_name][poses[4]]] + solo_skill[teams_players[team_1_name][poses[4]]] + \
                     team_playing[teams_players[team_1_name][poses[4]]]
             poses_skill = [pos_1, pos_2, pos_3, pos_4, pos_5]
+<<<<<<< HEAD
             player_pos = random.choice(poses_skill, weights = [pos_1 / team_1_skill, pos_2 / team_1_skill, pos_3 / team_1_skill,
                                                 pos_4 / team_1_skill, pos_5 / team_1_skill], k=1)
+=======
+            player_pos = random.choice(poses)
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
             print('The best player of the match: ', teams_players[team_1_name][player_pos])
         elif not flag_winner_team_1:
             player_pos = random.randint(1, 5)
@@ -410,6 +438,23 @@ def match_simulating(team_1_name, team_2_name, match_bo):
                     flag = False
                 print('//////////////////////////////////////////////////////////')
             best_player_match()
+<<<<<<< HEAD
+=======
+            print(team_1_name, '', game_point_team_1, ':', game_point_team_2, '', team_2_name)
+            print()
+            if game_point_team_1 == 2 or game_point_team_2 == 2:
+                break
+        print(team_1_name, '', game_point_team_1, ':', game_point_team_2, '', team_2_name)
+        if game_point_team_1 > game_point_team_2:
+            match_winner = team_1_name
+            print(match_winner, ' Win')
+        elif game_point_team_2 > game_point_team_1:
+            match_winner = team_2_name
+            print(match_winner, ' Win')
+        elif game_point_team_1 == game_point_team_2:
+            print('Draw')
+        return 'Congratulations' + ' ' + match_winner
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
 
     if match_bo == 5:
         for bo5 in range(5):
@@ -454,10 +499,29 @@ def match_simulating(team_1_name, team_2_name, match_bo):
         print(match_winner, ' Win')
     elif game_point_team_2 > game_point_team_1:
         match_winner = team_2_name
+<<<<<<< HEAD
+=======
+
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
         print(match_winner, ' Win')
     elif game_point_team_1 == game_point_team_2:
         print('Draw')
     return 'Congratulations' + ' ' + match_winner
 
 
+<<<<<<< HEAD
 print(match_simulating('Velum', 'Sixty', 1))
+=======
+team1 = input('First Team: ')
+team2 = input('Second Team: ')
+bo_maps = int(input('BO(1,2,3,5): '))
+
+print(match_simulating(team1, team2, bo_maps))
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+print('///////////////////////////////////////////////')
+>>>>>>> f533529f09dd61aea7f31f43780e9040cc9695e0
